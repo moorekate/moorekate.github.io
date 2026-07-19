@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: false # hidden until I have projects 
+description: Stuff I did.
+nav: true # hidden until I have projects 
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [hackathons] # should correspond to categories in _projects.md
 horizontal: false
 ---
 

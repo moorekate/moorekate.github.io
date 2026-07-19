@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Looker Lineage
+description: Winner of "Best Hack" at the 2024 Looker Hackathon
+img: assets/img/sankey-lineage.png
 importance: 1
-category: work
+category: hackathons
 related_publications: true
 ---
 
