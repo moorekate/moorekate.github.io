@@ -1,0 +1,91 @@
+/******************************************************************************
+ * Content
+ ******************************************************************************/
+
+@use "variables" as v;
+
+body {
+  padding-bottom: 70px;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    scroll-margin-top: 66px;
+  }
+}
+
+body.fixed-top-nav {
+  // Add some padding for the nav-bar.
+  padding-top: 57px;
+}
+
+body.sticky-bottom-footer {
+  // Remove padding below footer.
+  padding-bottom: 0;
+}
+
+.container {
+  max-width: v.$max-content-width;
+}
+
+// Profile
+.profile {
+  img {
+    width: 100%;
+  }
+}
+
+// Content layout uses Bootstrap's grid system with responsive columns
+// Main content flows naturally through container-mt-5 and Bootstrap grid classes
+// See _layouts/default.liquid and _includes/projects.liquid for examples
+
+/******************************************************************************
+ * Publications
+ ******************************************************************************/
+
+// Publications layout is defined in _includes/bib_search.liquid
+// Uses jekyll-scholar for BibTeX parsing and Bootstrap cards for display
+
+// Selected publications section
+.selected-publications {
+  margin: 1rem 0 1rem;
+}
+
+.selected-publications h2 {
+  margin-bottom: 0.25rem;
+}
+
+.about-link {
+  color: inherit !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid transparent;
+  transition: border-color 120ms ease;
+}
+
+.about-link:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+  border-bottom-color: var(--global-theme-color);
+}
+
+.about-link i {
+  color: var(--global-theme-color);
+}
+
+.about-link-subtitle {
+  margin: 0.25rem 0 1.25rem;
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  font-style: italic;
+}
+
+/*****************************************************************************
+* Projects
+*****************************************************************************/
+
+// TODO: redefine projects layout.

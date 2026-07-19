@@ -1,0 +1,47 @@
+{% assign repo_url = include.repository | split: '/' %}
+{% if site.data.repositories.github_users contains repo_url.first %}
+  {% assign show_owner = false %}
+{% else %}
+  {% assign show_owner = true %}
+{% endif %}
+{% assign repo_data = site.data.github_meta.repos[include.repository] %}
+{% assign lang_color = site.data.language_colors[repo_data.language] | default: '#888888' %}
+
+<div class="repo p-2">
+  <a href="https://github.com/{{ include.repository }}" class="repo-card-link">
+    <div class="repo-card">
+      <div class="repo-card-header">
+        <i class="fa-solid fa-book repo-card-icon" aria-hidden="true"></i>
+        <span class="repo-card-name">
+          {% if show_owner -%}
+            <span class="repo-card-owner">{{ repo_url[0] }}/</span>
+          {%- endif -%}
+          {{- repo_url[1] }}
+        </span>
+      </div>
+      {% if repo_data.description %}
+        <p class="repo-card-description">{{ repo_data.description }}</p>
+      {% endif %}
+      <div class="repo-card-stats">
+        {% if repo_data.language %}
+          <span class="repo-card-language">
+            <span class="repo-language-dot" style="background: {{ lang_color }}"></span>
+            {{ repo_data.language }}
+          </span>
+        {% endif %}
+        {% if repo_data.stargazers_count and repo_data.stargazers_count > 0 %}
+          <span class="repo-card-stat">
+            <i class="fa-regular fa-star" aria-hidden="true"></i>
+            {{ repo_data.stargazers_count }}
+          </span>
+        {% endif %}
+        {% if repo_data.forks_count and repo_data.forks_count > 0 %}
+          <span class="repo-card-stat">
+            <i class="fa-solid fa-code-fork" aria-hidden="true"></i>
+            {{ repo_data.forks_count }}
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>

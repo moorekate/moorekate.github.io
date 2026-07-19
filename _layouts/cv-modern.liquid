@@ -1,0 +1,432 @@
+---
+layout: default
+---
+{% assign cv = site.data.cv.cv %}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ page.title }}
+      {% if page.cv_pdf %}
+        <a
+          {% if page.cv_pdf contains '://' %}
+            href="{{ page.cv_pdf }}"
+          {% else %}
+            href="{{ page.cv_pdf | relative_url }}"
+          {% endif %}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="float-right"
+        >
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      {% endif %}
+    </h1>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <article class="cv-modern">
+    <!-- ===== BIO / PROFILE CARD ===== -->
+    <div class="cv-profile-card">
+      <div class="cv-profile-body">
+        {% if cv.name %}
+          <h2 class="cv-section-title"></i>{{ cv.name }}</h2>
+        {% endif %}
+        {% if cv.summary %}
+          <p class="cv-bio">{{ cv.summary }}</p>
+        {% endif %}
+
+        <!-- Skills -->
+        {% if cv.sections.Skills %}
+          <div class="cv-tags-row">
+            {% for skill in cv.sections.Skills %}
+              {% if skill.name %}
+                <span class="cv-tag">
+                <i class="{{ skill.icon }}"></i> 
+                {{ skill.name }}
+                </span>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <!-- Contact row -->
+        <div class="cv-contact-row">
+          {% if cv.email %}
+            <a href="mailto:{{ cv.email }}" class="cv-contact-item"> <i class="fa-solid fa-envelope"></i> {{ cv.email }} </a>
+          {% endif %}
+          {% if cv.matrix %}
+            <a href="https://matrix.to/#/{{ cv.matrix }}" target="_blank" rel="noopener" class="cv-contact-item">
+              <i class="fa-solid fa-comment"></i> {{ cv.matrix }}
+            </a>
+          {% endif %}
+          {% if cv.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ cv.linkedin }}" target="_blank" rel="noopener" class="cv-contact-item">
+              <i class="fa-brands fa-square-linkedin"></i> {{ cv.linkedin }}
+            </a>
+          {% endif %}
+          {% if cv.github %}
+            <a href="https://github.com/{{ cv.github }}" target="_blank" rel="noopener" class="cv-contact-item">
+              <i class="fa-brands fa-square-github"></i> {{ cv.github }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EXPERIENCE ===== -->
+    {% assign exp_entries = cv.sections.Experience %}
+    {% if exp_entries.size > 0 %}
+      <section class="cv-section">
+        <h2 class="cv-section-title"><i class="fa-solid fa-briefcase"></i> Experience</h2>
+
+        {% comment %} Split into main (researcher/industry) and secondary (TA/SA) {% endcomment %}
+        {% assign main_entries = '' | split: '' %}
+        {% assign secondary_entries = '' | split: '' %}
+        {% for entry in exp_entries %}
+          {% if entry.position == 'Teaching Assistant' %}
+            {% assign secondary_entries = secondary_entries | push: entry %}
+          {% else %}
+            {% assign main_entries = main_entries | push: entry %}
+          {% endif %}
+        {% endfor %}
+
+        <div class="cv-timeline">
+          {% for entry in main_entries %}
+            <div class="cv-timeline-item">
+              <div class="cv-timeline-dot"></div>
+              <div class="cv-timeline-content">
+                <div class="cv-timeline-header">
+                  <div>
+                    <span class="cv-timeline-title">
+                        {{ entry.position }}
+                    </span>
+                    <span class="cv-timeline-org">
+                    {% if entry.url %}
+                        <a href="{{ entry.url }}" target="_blank" rel="noopener">{{ entry.company }}</a>
+                    {% else %}
+                        {{ entry.company | default: entry.name }}
+                    {% endif %}
+                    </span>
+                  </div>
+                  <div class="cv-timeline-dates">
+                    {% assign s = entry.start_date | split: '-' | first %}
+                    {% if entry.end_date %}
+                      {% assign e = entry.end_date | split: '-' | first %}
+                      {{ s }}&thinsp;–&thinsp;{{ e }}
+                    {% else %}
+                      {{ s }}&thinsp;–&thinsp;Present
+                    {% endif %}
+                  </div>
+                </div>
+                {% if entry.location %}
+                  <p class="cv-timeline-location"><i class="fa-solid fa-location-dot"></i> {{ entry.location }}</p>
+                {% endif %}
+                {% if entry.summary %}
+                  <p class="cv-timeline-desc">{{ entry.summary }}</p>
+                {% endif %}
+                {% if entry.highlights %}
+                  <ul>
+                    {% for item in entry.highlights %}
+                      <li class="cv-timeline-desc">{{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if secondary_entries.size > 0 %}
+          <h3 class="cv-subsection-title" style="margin-top: 1.25rem;">
+            Teaching Assistantships <span class="cv-courses-past-count">{{ secondary_entries.size }}</span>
+          </h3>
+          <div class="cv-courses-past-wrapper" id="cv-exp-secondary">
+            <div class="cv-timeline cv-timeline-secondary">
+              {% for entry in secondary_entries %}
+                <div class="cv-timeline-item">
+                  <div class="cv-timeline-dot cv-timeline-dot--sm"></div>
+                  <div class="cv-timeline-content">
+                    <div class="cv-timeline-header">
+                      <div>
+                        <span class="cv-timeline-title" style="font-size: 0.88rem;">{{ entry.position }}</span>
+                        <span class="cv-timeline-org">{{ entry.summary }}</span>
+                      </div>
+                      <div class="cv-timeline-dates">
+                        {% assign s = entry.start_date | split: '-' | first %}
+                        {% if entry.end_date %}
+                          {% assign e = entry.end_date | split: '-' | first %}
+                          {{ s }}&thinsp;–&thinsp;{{ e }}
+                        {% else %}
+                          {{ s }}&thinsp;–&thinsp;Present
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="cv-courses-fade"></div>
+          </div>
+          <button
+            class="cv-courses-toggle"
+            id="cv-exp-toggle"
+            onclick="
+              var w = document.getElementById('cv-exp-secondary');
+              var btn = document.getElementById('cv-exp-toggle');
+              var expanded = w.classList.toggle('is-expanded');
+              btn.textContent = expanded ? 'Show less' : 'Show all {{ secondary_entries.size }} entries';
+            "
+          >
+            Show all {{ secondary_entries.size }} entries
+          </button>
+        {% endif %}
+      </section>
+    {% endif %}
+
+    <!-- ===== EDUCATION ===== -->
+    {% if cv.sections.Education.size > 0 %}
+      <section class="cv-section">
+        <h2 class="cv-section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+        <div class="cv-timeline">
+          {% for entry in cv.sections.Education %}
+            <div class="cv-timeline-item">
+              <div class="cv-timeline-dot"></div>
+              <div class="cv-timeline-content">
+                <div class="cv-timeline-header">
+                  <div>
+                    <span class="cv-timeline-title">
+                      {% if entry.url %}
+                        <a href="{{ entry.url }}" target="_blank" rel="noopener">{{ entry.studyType }}</a>
+                      {% else %}
+                        {{ entry.studyType }}
+                      {% endif %}
+                    </span>
+                    <span class="cv-timeline-org">{{ entry.institution }}</span>
+                  </div>
+                  <div class="cv-timeline-dates">{{ entry.start_date }}&thinsp;–&thinsp;{{ entry.end_date }}</div>
+                </div>
+                {% if entry.location %}
+                  <p class="cv-timeline-location"><i class="fa-solid fa-location-dot"></i> {{ entry.location }}</p>
+                {% endif %}
+                {% if entry.area %}
+                  <p class="cv-timeline-desc">{{ entry.area }}</p>
+                {% endif %}
+                {% if entry.highlights %}
+                  <p class="cv-timeline-desc"><i>{{ entry.highlights }}</i></p>
+                {% endif %}
+
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    <!-- ===== TEACHING ===== -->
+    {% if cv.sections.Teaching.size > 0 %}
+      <section class="cv-section">
+        <h2 class="cv-section-title"><i class="fa-solid fa-chalkboard-user"></i> Teaching</h2>
+
+        {% comment %} Derive the most recent semester from the first entry (list is ordered newest-first) {% endcomment %}
+        {% assign latest_semester = cv.sections.Teaching[0].semester %}
+
+        {% assign current_courses = cv.sections.Teaching | where: 'semester', latest_semester %}
+        {% assign past_courses = '' | split: '' %}
+        {% for course in cv.sections.Teaching %}
+          {% unless course.semester == latest_semester %}
+            {% assign past_courses = past_courses | push: course %}
+          {% endunless %}
+        {% endfor %}
+
+        {% if current_courses.size > 0 %}
+          <h3 class="cv-subsection-title">
+            {{ latest_semester }}
+            <span class="cv-badge-current">Current</span>
+          </h3>
+          <div class="cv-course-grid">
+            {% for course in current_courses %}
+              <div class="cv-course-card cv-course-current">
+                <div class="cv-course-name">
+                  {% if course.url %}
+                    <a href="{{ course.url }}" target="_blank" rel="noopener">{{ course.course }}</a>
+                  {% else %}
+                    {{ course.course }}
+                  {% endif %}
+                </div>
+                <div class="cv-course-meta">
+                  <span class="cv-course-type">{{ course.type }}</span>
+                  {% if course.url -%}
+                    <a href="{{ course.url }}" target="_blank" rel="noopener" class="cv-course-link"
+                      ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                    ></a>
+                  {%- endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if past_courses.size > 0 %}
+          <h3 class="cv-subsection-title" style="margin-top: 1.5rem;">
+            Past Courses <span class="cv-courses-past-count">{{ past_courses.size }}</span>
+          </h3>
+          <div class="cv-courses-past-wrapper" id="cv-past-courses">
+            <div class="cv-course-grid">
+              {% for course in past_courses %}
+                <div class="cv-course-card">
+                  <div class="cv-course-name">
+                    {% if course.url %}
+                      <a href="{{ course.url }}" target="_blank" rel="noopener">{{ course.course }}</a>
+                    {% else %}
+                      {{ course.course }}
+                    {% endif %}
+                  </div>
+                  <div class="cv-course-meta">
+                    <span class="cv-course-type">{{ course.type }}</span>
+                    <span class="cv-course-semester">{{ course.semester }}</span>
+                    {% if course.url -%}
+                      <a href="{{ course.url }}" target="_blank" rel="noopener" class="cv-course-link"
+                        ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                      ></a>
+                    {%- endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="cv-courses-fade"></div>
+          </div>
+          <button
+            class="cv-courses-toggle"
+            id="cv-past-toggle"
+            onclick="
+              var w = document.getElementById('cv-past-courses');
+              var btn = document.getElementById('cv-past-toggle');
+              var expanded = w.classList.toggle('is-expanded');
+              btn.textContent = expanded ? 'Show less' : 'Show all {{ past_courses.size }} past courses';
+            "
+          >
+            Show all {{ past_courses.size }} past courses
+          </button>
+        {% endif %}
+      </section>
+    {% endif %}
+
+    <!-- ===== PROJECTS ===== -->
+    {% if cv.sections.Projects.size > 0 %}
+      <section class="cv-section">
+        <h2 class="cv-section-title"><i class="fa-solid fa-code-branch"></i> Projects</h2>
+        <div class="cv-project-list">
+          {% for project in cv.sections.Projects %}
+            <div class="cv-project-item">
+              <div class="cv-project-header">
+                <span class="cv-project-name">
+                  {% if project.url %}
+                    <a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>
+                  {% else %}
+                    {{ project.name }}
+                  {% endif %}
+                </span>
+                {% if project.start_date %}
+                  <span class="cv-project-dates"> since {{ project.start_date | split: '-' | first }} </span>
+                {% endif %}
+              </div>
+              {% if project.summary %}
+                <p class="cv-project-summary">{{ project.summary }}</p>
+              {% endif %}
+              {% if project.highlights %}
+                <div class="cv-project-tags">
+                  {% for tag in project.highlights %}
+                    <span class="cv-tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    <!-- ===== AWARDS ===== -->
+    {% if cv.sections.Awards.size > 0 %}
+      <section class="cv-section">
+        <h2 class="cv-section-title"><i class="fa-solid fa-trophy"></i> Awards &amp; Recognition</h2>
+        <div class="cv-awards-list">
+          {% for award in cv.sections.Awards %}
+            <div class="cv-award-item">
+              <div class="cv-award-year">{{ award.date }}</div>
+              <div class="cv-award-body">
+                <span class="cv-award-title">
+                  {% if award.url %}
+                    <a href="{{ award.url }}" target="_blank" rel="noopener">{{ award.title }}</a>
+                  {% else %}
+                    {{ award.title }}
+                  {% endif %}
+                </span>
+                <span class="cv-award-by">{{ award.awarder }}</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    <!-- ===== CERTIFICATES ===== -->
+    {% if cv.sections.Certificates.size > 0 %}
+      <section class="cv-section">
+        <h2 class="cv-section-title"><i class="fa-solid fa-certificate"></i> Certificates</h2>
+        <div class="cv-cert-list">
+          {% for cert in cv.sections.Certificates %}
+            <div class="cv-cert-item">
+              {% if cert.icon %}
+                <i class="{{ cert.icon }} cv-cert-icon"></i>
+              {% endif %}
+              <div class="cv-cert-body">
+                <span class="cv-cert-name">
+                  {% if cert.url %}
+                    <a href="{{ cert.url }}" target="_blank" rel="noopener">{{ cert.name }}</a>
+                  {% else %}
+                    {{ cert.name }}
+                  {% endif %}
+                </span>
+                <span class="cv-cert-meta">{{ cert.issuer }}, {{ cert.date }}</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    <!-- ===== COMMUNITY ===== -->
+    {% if cv.sections.Community.size > 0 %}
+      <section class="cv-section">
+        <h2 class="cv-section-title"><i class="fa-solid fa-people-group"></i> Community Service</h2>
+        <div class="cv-community-list">
+          {% for item in cv.sections.Community %}
+            <div class="cv-community-item">
+              <span class="cv-community-label">{{ item.label }}</span>
+              <span class="cv-community-details">{{ item.details | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    <!-- ===== LANGUAGES ===== -->
+    {% if cv.sections.Languages.size > 0 %}
+      <section class="cv-section">
+        <h2 class="cv-section-title"><i class="fa-solid fa-language"></i> Languages</h2>
+        <div class="cv-lang-row">
+          {% for lang in cv.sections.Languages %}
+            <div class="cv-lang-item">
+              <span class="cv-lang-name">{{ lang.name }}</span>
+              <span class="cv-lang-level">{{ lang.summary }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  </article>
+</div>

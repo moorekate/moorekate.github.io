@@ -1,0 +1,107 @@
+/*******************************************************************************
+ * Custom publication styles (Google Scholar Citation overview)
+ ******************************************************************************/
+
+// Publications page hero + metrics
+.pub-shell {
+  margin: 1.5rem 0 1rem;
+}
+
+.pub-hero {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.pub-hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pub-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  letter-spacing: 0.01em;
+}
+
+.pub-updated {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+}
+
+.pub-search {
+  flex: 1 1 260px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.metrics-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.metric-card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  background: var(--global-card-bg-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    border-color 120ms ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  border-color: var(--global-theme-color);
+}
+
+.metric-title {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  margin: 0 0 0.15rem;
+  letter-spacing: 0.01em;
+}
+
+.metric-value {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--global-text-color);
+  margin: 0;
+}
+
+.metric-sub {
+  font-size: 0.82rem;
+  color: var(--global-text-color-light);
+  margin: 0.25rem 0 0;
+}
+
+.metric-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .pub-hero-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pub-search {
+    width: 100%;
+    flex: none;
+  }
+}

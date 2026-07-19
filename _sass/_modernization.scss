@@ -1,0 +1,554 @@
+// Improved typography
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Better heading styles - subtle weights
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+// Improved links throughout the site
+a {
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  // Disable underline for navigation elements
+  &.nav-link,
+  &.navbar-brand,
+  &.dropdown-toggle,
+  &.dropdown-item,
+  // Disable underline for button-like elements
+  &[class*="btn"],
+  &.btncv,
+  &.certificate-item,
+  // Disable underline for card wrappers
+  &:has(.card),
+  &.metric-link,
+  // Disable underline for links inside cards
+  .card &,
+  .navbar & {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Card improvements
+.card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 150ms ease;
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+}
+
+// Improved code styling
+code {
+  border-radius: 0.25rem;
+  padding: 0.15rem 0.3rem;
+  font-size: 0.9em;
+}
+
+pre {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--global-divider-color);
+}
+
+// Improved blockquote styling
+blockquote {
+  border-left-width: 4px;
+  border-radius: 0.125rem;
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+}
+
+// Improved list styling
+ol:not(.navbar-nav):not(.dropdown-menu),
+ul:not(.navbar-nav):not(.dropdown-menu) {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+
+  li {
+    margin-bottom: 0.3rem;
+  }
+}
+
+// Table improvements
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+
+  th {
+    background-color: var(--global-bg-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding: 0.75rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  td {
+    border-bottom: 1px solid var(--global-divider-color);
+    padding: 0.75rem;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+// Suppress the default browser focus ring for mouse/touch clicks;
+// :focus-visible below handles keyboard navigation.
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+// Better spacing for content sections
+.post,
+.page-content {
+  > p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  > ul,
+  > ol {
+    margin-bottom: 1.25rem;
+  }
+}
+
+// Improved search input styling
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+input[type="search"],
+input.search {
+  color: var(--global-text-color);
+  background: var(--global-bg-color);
+  border-radius: 0.375rem;
+  border: 1px solid var(--global-divider-color);
+  padding: 0.5rem 0.75rem;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+
+  &:focus {
+    border-color: var(--global-theme-color);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--global-theme-color) 10%, transparent);
+  }
+}
+
+// Badge improvements
+.badge {
+  border-radius: 999px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all 120ms ease;
+}
+
+// Better shadow utilities
+.shadow-sm {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+// ─── About page hero section ────────────────────────────────────────────────
+
+.page-hero {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  .page-hero-logo {
+    height: 150px;
+    width: auto;
+    margin-bottom: 1.25rem;
+    transition: transform 250ms ease;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  .page-hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+    line-height: 1.2;
+
+    a {
+      color: var(--global-text-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--global-theme-color);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .page-hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--global-text-color-light);
+    margin: 0 auto 1.75rem;
+    font-weight: 400;
+    max-width: 580px;
+  }
+
+  .page-hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Primary hero CTA button
+.btn-hero-primary {
+  background-color: var(--global-theme-color) !important;
+  color: #fff !important;
+  border-color: var(--global-theme-color) !important;
+
+  &:hover {
+    opacity: 0.85;
+    color: #fff !important;
+    text-decoration: none !important;
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--global-theme-color) 35%, transparent) !important;
+  }
+}
+
+// ─── About page content improvements ────────────────────────────────────────
+
+// Make h2 section headings on about page more distinctive (content only, not layout h2s)
+.post article .clearfix h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--global-theme-color);
+  display: inline-block;
+  color: var(--global-text-color);
+}
+
+// Navbar brand logo
+.navbar-brand img {
+  border-radius: 4px;
+}
+
+// ─── Repository cards ────────────────────────────────────────────────────────
+
+.repo-card-link,
+.repo-user-card-link {
+  text-decoration: none !important;
+  display: block;
+}
+
+// Repo pin card
+.repo-card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
+  padding: 1rem 1.1rem;
+  background: var(--global-card-bg-color);
+  transition:
+    box-shadow 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  &:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border-color: color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+    transform: translateY(-2px);
+
+    .repo-card-name {
+      color: var(--global-theme-color);
+    }
+  }
+
+  &.repo-card-sm {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.9em;
+  }
+}
+
+.repo-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.repo-card-icon {
+  color: var(--global-theme-color);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  width: 1em;
+  text-align: center;
+}
+
+.repo-card-name {
+  transition: color 150ms ease;
+  color: var(--global-text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.repo-card-name-wrap {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: unset;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.repo-card-owner {
+  color: var(--global-text-color-light);
+  font-weight: 400;
+}
+
+.repo-card-description {
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.repo-card-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 0.3rem;
+}
+
+.repo-card-language {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--global-text-color-light);
+}
+
+.repo-language-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.repo-card-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--global-text-color-light);
+
+  i {
+    color: var(--global-text-color-light);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  &.repo-card-doi {
+    font-family: monospace;
+    font-size: 0.72rem;
+    word-break: break-all;
+    white-space: normal;
+  }
+}
+
+// User card
+.repo-user-card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  background: var(--global-card-bg-color);
+  transition:
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+
+  &:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border-color: color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+  }
+}
+
+.repo-user-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.repo-user-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--global-divider-color);
+}
+
+.repo-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  overflow: hidden;
+}
+
+.repo-user-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--global-text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repo-user-login {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+.repo-user-bio {
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+  margin: 0.25rem 0 0;
+  line-height: 1.4;
+}
+
+.repo-user-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 0.75rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.repo-user-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.4rem 0.25rem;
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--global-theme-color) 5%, transparent);
+}
+
+.repo-user-stat-value {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--global-text-color);
+}
+
+.repo-user-stat-label {
+  font-size: 0.72rem;
+  color: var(--global-text-color-light);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+// Repo cards grid
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+  }
+
+  .repo {
+    display: flex;
+
+    .repo-card-link {
+      width: 100%;
+    }
+
+    .repo-card {
+      width: 100%;
+    }
+  }
+}
+
+// Fix back-to-top button arrow alignment
+// The JS library calculates SVG size/margin for its default 56px diameter,
+// but the CSS overrides the button to 40px — use flex to center properly.
+#back-to-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  svg {
+    margin: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+}

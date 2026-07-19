@@ -1,0 +1,21 @@
+{% assign doi_filename = include.repo.doi | replace: '/', '_' | replace: '.', '_' | replace: ':', '_' %}
+
+<div class="repo p-2">
+  <a href="https://doi.org/{{ include.repo.doi }}" class="repo-card-link" target="_blank" rel="noopener noreferrer">
+    <div class="repo-card">
+      <div class="repo-card-header">
+        <i class="fa-solid fa-box-archive repo-card-icon" aria-hidden="true"></i>
+        <span class="repo-card-name">{{ include.repo.name }}</span>
+      </div>
+      {% if include.repo.description %}
+        <p class="repo-card-description">{{ include.repo.description }}</p>
+      {% endif %}
+      <div class="repo-card-stats">
+        <span class="repo-card-stat repo-card-doi">
+          <i class="fa-solid fa-fingerprint" aria-hidden="true"></i>
+          {{ include.repo.doi }}
+        </span>
+      </div>
+    </div>
+  </a>
+</div>

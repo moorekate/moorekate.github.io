@@ -18,7 +18,7 @@ group :jekyll_plugins do
     gem 'jekyll-regex-replace'
     gem 'jekyll-scholar'
     gem 'jekyll-sitemap'
-    gem 'jekyll-socials'
+    gem 'jekyll-socials', path: '_modules/jekyll-socials'
     gem 'jekyll-tabs'
     gem 'jekyll-terser', :git => "https://github.com/RobertoJBeltran/jekyll-terser.git"
     gem 'jekyll-toc'
@@ -40,7 +40,7 @@ end
 
 # Gems for al-folio plugins
 group :al_folio_plugins do
-    gem 'al_folio_core', '= 1.0.11'
+    gem 'al_folio_core', path: '_modules/al-folio-core'
     gem 'al_icons', '= 1.0.0'
     gem 'al_folio_cv', '= 1.0.0'
     gem 'al_folio_distill', '= 1.0.2'

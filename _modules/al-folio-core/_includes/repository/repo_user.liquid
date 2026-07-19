@@ -1,0 +1,50 @@
+{% assign user_data = site.data.github_meta.users[include.username] %}
+
+<div class="repo p-2 w-100">
+  <a href="https://github.com/{{ include.username }}" class="repo-user-card-link">
+    <div class="repo-user-card">
+      <div class="repo-user-card-top">
+        {% if user_data.avatar_url %}
+          <img class="repo-user-avatar" src="{{ user_data.avatar_url }}" alt="{{ include.username }}">
+        {% endif %}
+        <div class="repo-user-info">
+          {% if user_data.name %}
+            <span class="repo-user-name">{{ user_data.name }}</span>
+          {% endif %}
+          <span class="repo-user-login">@{{ include.username }}</span>
+          {% if user_data.bio %}
+            <p class="repo-user-bio">{{ user_data.bio }}</p>
+          {% endif %}
+        </div>
+      </div>
+      <div class="repo-user-stats">
+        <div class="repo-user-stat">
+          <span class="repo-user-stat-value">{{ user_data.total_stars | default: 0 }}</span>
+          <span class="repo-user-stat-label"><i class="fa-regular fa-star" aria-hidden="true"></i> Stars</span>
+        </div>
+        {% if user_data.total_commits %}
+          <div class="repo-user-stat">
+            <span class="repo-user-stat-value">{{ user_data.total_commits }}</span>
+            <span class="repo-user-stat-label"><i class="fa-solid fa-code-commit" aria-hidden="true"></i> Commits ({{ 'now' | date: '%Y' }})</span>
+          </div>
+        {% endif %}
+        <div class="repo-user-stat">
+          <span class="repo-user-stat-value">{{ user_data.total_prs | default: 0 }}</span>
+          <span class="repo-user-stat-label"><i class="fa-solid fa-code-pull-request" aria-hidden="true"></i> PRs</span>
+        </div>
+        <div class="repo-user-stat">
+          <span class="repo-user-stat-value">{{ user_data.total_issues | default: 0 }}</span>
+          <span class="repo-user-stat-label"><i class="fa-regular fa-circle-dot" aria-hidden="true"></i> Issues</span>
+        </div>
+        <div class="repo-user-stat">
+          <span class="repo-user-stat-value">{{ user_data.public_repos | default: 0 }}</span>
+          <span class="repo-user-stat-label"><i class="fa-solid fa-book" aria-hidden="true"></i> Repos</span>
+        </div>
+        <div class="repo-user-stat">
+          <span class="repo-user-stat-value">{{ user_data.followers | default: 0 }}</span>
+          <span class="repo-user-stat-label"><i class="fa-solid fa-users" aria-hidden="true"></i> Followers</span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

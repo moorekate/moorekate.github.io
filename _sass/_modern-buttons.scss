@@ -1,0 +1,126 @@
+// Modern button base styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.25rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--global-divider-color);
+  background-color: transparent;
+  color: var(--global-text-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease,
+    background-color 150ms ease,
+    box-shadow 150ms ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    background-color: color-mix(in srgb, var(--global-theme-color) 3%, transparent);
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: color-mix(in srgb, var(--global-theme-color) 6%, transparent);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--global-theme-color) 15%, transparent);
+  }
+
+  // Small button variant
+  &.btn-sm {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.8rem;
+  }
+
+  // Award button variant
+  &.award {
+    border-color: var(--global-highlight-color);
+    color: var(--global-highlight-color);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--global-highlight-color) 3%, transparent);
+      border-color: var(--global-highlight-color);
+      color: var(--global-highlight-color);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+  }
+}
+
+// Icon-aware buttons
+.btn[class*="icon"] {
+  svg,
+  i {
+    font-size: 1em;
+    vertical-align: middle;
+  }
+}
+
+// Buttons in publication context
+.publications {
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding-top: 0.25rem;
+
+    a.btn {
+      color: var(--global-text-color);
+      border: 1px solid var(--global-divider-color);
+      background-color: transparent;
+      padding: 0.25rem 1rem;
+      margin-left: 0;
+      font-size: 0.7rem;
+      font-weight: 500;
+
+      &:hover {
+        color: var(--global-theme-color);
+        border-color: var(--global-theme-color);
+        background-color: color-mix(in srgb, var(--global-theme-color) 3%, transparent);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      }
+
+      &.award {
+        border-color: var(--global-highlight-color);
+        color: var(--global-highlight-color);
+
+        &:hover {
+          background-color: color-mix(in srgb, var(--global-highlight-color) 3%, transparent);
+          border-color: var(--global-highlight-color);
+        }
+      }
+    }
+  }
+}
+
+// Button group spacing
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  .btn {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// Secondary button style variant
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--global-divider-color);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--global-theme-color) 5%, transparent);
+    border-color: var(--global-theme-color);
+  }
+}
