@@ -194,6 +194,8 @@ collections:
     output: true
   teachings:
     output: true
+  connections: # NYT Connections collection
+    output: true
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
