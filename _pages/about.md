@@ -29,3 +29,20 @@ latest_posts:
 I believe in sustainable data practices that scale alongside new and emerging technologies, respectful but driven work environments, and above all else-- the sanctity of SQL.
 
 Outside of work, I'm an active volleyball player, rock climber, and reader!
+
+## Daily NYT Connections
+
+<div class="connections-widget">
+
+  <div class="connections-header">
+    <strong>#{{ site.data.connections.game }}</strong>
+    <span>{{ site.data.connections.mistakes }} mistake{% if site.data.connections.mistakes != 1 %}s{% endif %}</span>
+  </div>
+
+  <div class="connections-grid">
+    {% for row in site.data.connections.rows %}
+      <div>{{ row }}</div>
+    {% endfor %}
+  </div>
+
+</div>
