@@ -1,0 +1,24 @@
+{% assign game = site.data.connections[0] %} <!-- pulls the first listed game in the _data/connections.yml file -->
+ 
+ <div class="connections-title">
+    <h2>Daily NYT Connections</h2>  <!-- hijacks al-folio's default h2 styling -->
+  </div>
+
+<div class="connections-widget">
+
+ <!-- header items are date // game # // # of mistakes -->
+  <div class="connections-header">
+    <strong>{{ game.date }}</strong>  <!-- pulls the data associated with the first listed game -->
+    <strong>#{{ game.game }}</strong> <!-- pulls the game number associated with the first listed game -->
+    <span> {{ game.mistakes }} mistake{% if game.mistakes != 1 %}s{% endif %}</span> 
+    <!-- pulls number of mistakes for the first listed game + handles plurality dynamically -->
+  </div>
+
+ <!-- grabs the 4x4 grid rows for the first listed game to display -->
+  <div class="connections-grid">
+    {% for row in game.rows %}
+      <div>{{ row }}</div>
+    {% endfor %}
+  </div>
+
+</div>

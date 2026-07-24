@@ -30,24 +30,5 @@ I believe in sustainable data practices that scale alongside new and emerging te
 
 Outside of work, I'm an active volleyball player, rock climber, and reader!
 
-{% assign game = site.data.connections[0] %}
- 
- <div class="connections-title">
-    <h2>Daily NYT Connections</h2>
-  </div>
-
-<div class="connections-widget">
-
-  <div class="connections-header">
-    <strong>{{ game.date }}</strong>
-    <strong>#{{ game.game }}</strong>
-    <span> {{ game.mistakes }} mistake{% if game.mistakes != 1 %}s{% endif %}</span>
-  </div>
-
-  <div class="connections-grid">
-    {% for row in game.rows %}
-      <div>{{ row }}</div>
-    {% endfor %}
-  </div>
-
-</div>
+<!-- HTML for the Connections widget lives in the _includes/connections.html file -->
+ {% include connections.html %}
