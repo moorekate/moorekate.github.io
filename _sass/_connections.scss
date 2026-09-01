@@ -26,6 +26,17 @@
   // do not need to define a CSS grid because YAML formatting is text/strings
 }
 
+.connections-archive {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.connections-archive a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 
 
 
