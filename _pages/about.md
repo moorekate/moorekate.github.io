@@ -26,17 +26,20 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I've spent 5+ years working with data from nearly every direction: as an analyst, engineer, and, once upon a time, as a geospatial expert.
+I've spent half a decade working with data from nearly every direction: as an analyst, engineer, and, once upon a time, as a geospatial expert.
 
 Today I'm a Data Engineer. I write Python and SQL, build and orchestrate pipelines, work with APIs and cloud infrastructure, and spend a lot of time thinking about how data gets from where it starts to where it needs to be.
 
-But I also know what it's like to be the person waiting for that data. I've owned analytics, experimentation, metrics, models, and reporting. I've worked closely with the people making product decisions from it. And I've worked with data formats strange enough to require latitude and longitude.
+I also know what it's like to be the person waiting for that data. I've owned analytics, experimentation, metrics, and models. I've worked closely with the people making product decisions from it. And I've worked with data formats in bith two and three dimensions-- my favorite data representation is the space-time cube because it sounds like something from Star Trek. 
 
-I like that I've seen so many sides of it. I don't want to do all of them at once, but I think I'm a much better engineer for knowing what exists beyond my part of the stack.
+I like that I've seen so many sides of how data is sourced, transformed, and then utilized to drive a bussiness forward. I think I'm a much better engineer for knowing what exists beyond my part of the stack. There's always more to learn. That's probably my favorite part.
 
-There's always more to learn. That's probably my favorite part.
+Outside of work, I'm a volleyball player, rock climber, and big-time reader!
 
-Outside of work, I'm a (pretty decent) volleyball player, rock climber, and avid reader! 
+<a href="mailto:youremail@example.com">email me</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/yourprofile/">LinkedIn</a>
+
 
 <!-- HTML for the Connections widget lives in the _includes/connections.html file -->
  {% include connections.html %}
