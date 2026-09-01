@@ -1,6 +1,52 @@
 # the connections widget grabs the first listed (i.e. index 0) game defined in this file
 # new games should be added to the top of this file, as that is what will be displayed onsite
 
+- game: 1177
+  date: 2026-08-32
+  mistakes: 0
+  rows:
+    - "🟩🟩🟩🟩"
+    - "🟦🟦🟦🟦"
+    - "🟪🟪🟪🟪"
+    - "🟨🟨🟨🟨"
+
+- game: 1171
+  date: 2026-08-25
+  mistakes: 0
+  rows:
+    - "🟦🟦🟦🟦"
+    - "🟨🟨🟨🟨"
+    - "🟩🟩🟩🟩"
+    - "🟪🟪🟪🟪"
+
+- game: 1168
+  date: 2026-08-22
+  mistakes: 0
+  rows:
+    - "🟦🟦🟦🟦"
+    - "🟨🟨🟨🟨"
+    - "🟪🟪🟪🟪"
+    - "🟩🟩🟩🟩"
+
+- game: 1158
+  date: 2026-08-12
+  mistakes: 2
+  rows:
+    - "🟩🟩🟩🟩"
+    - "🟪🟪🟪🟪"
+    - "🟨🟨🟨🟨"
+    - "🟦🟦🟦🟦"
+
+- game: 1157
+  date: 2026-08-11
+  mistakes: 1
+  rows:
+    - "🟨🟨🟨🟨"
+    - "🟩🟩🟩🟩"
+    - "🟦🟦🟦🟦"
+    - "🟪🟪🟪🟪"
+
+
 - game: 1138
   date: 2026-07-23
   mistakes: 0
