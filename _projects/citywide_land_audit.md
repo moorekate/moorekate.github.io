@@ -1,9 +1,12 @@
 ---
 layout: page
 title: Mayor Wu's Citywide Land Audit
-description: A description goes here. 
+description: 
+  <strong>City of Boston · Mayor's Office</strong><br>
+  <strong>Python · SQL · GIS · Spatial Data</strong><br>
+  Built the first combined dataset of City-owned, operated, and leased properties, unifying parcel, property, and transaction data to support budget allocation and redevelopment initiatives.
 img: assets/img/boston-seal-logo.png
-importance: 2
+importance: 3
 # category:
 related_publications: false #removes references
 ---

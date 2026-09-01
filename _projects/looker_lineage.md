@@ -1,7 +1,9 @@
 ---
 layout: page
-title: Looker Lineage
-description: Winner of "Best Hack" at the 2024 Looker Hackathon
+title: '"Best Hack", Looker Lineage'
+description:
+    <strong>Python · Looker API · BigQuery</strong> <br>
+    Winner of the 2024 Looker Hackathon. Built an impact analysis tool that maps field-level lineage across a Looker instance, helping engineers assess the downstream impact of upstream logic changes.
 img: assets/img/sankey-lineage.png
 importance: 1
 # category: 

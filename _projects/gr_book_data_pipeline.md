@@ -1,11 +1,21 @@
 ---
 layout: page
 title: GoodReads Book Data Pipeline
-description: A description goes here. 
+description: >-
+
+    <strong>Python · APIs · BigQuery · dbt</strong><br>
+    Built a production data pipeline ingesting Goodreads bookshelf and community
+    reviews data enriched with Google Books API metadata. Built models of reader
+    activity and interests utilizing Python, BigQuery, and dbt to measure audience
+    crossover across books, authors, and genres for the purpose of making customized
+    book recommendations and understanding product reach.
+
 img: assets/img/goodreads-cover.png
 importance: 2
 # category: 
 related_publications: false #removes references
+# hide_learn_more: true
+card_footer: Ask for details!
 ---
 <!-- + View the Citywide Land Audit webpage on boston.gov: [https://www.boston.gov/departments/housing/citywide-land-audit](https://www.boston.gov/departments/housing/citywide-land-audit)
 
