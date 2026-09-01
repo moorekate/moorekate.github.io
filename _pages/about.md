@@ -36,9 +36,9 @@ I like that I've seen so many sides of how data is sourced, transformed, and the
 
 Outside of work, I'm a volleyball player, rock climber, and reader!
 
-<a href="mailto:youremail@example.com">email me</a>
+<a href="mailto:katealicemoore@gmail.com">email me</a>
 &nbsp;&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/yourprofile/">LinkedIn</a>
+<a href="https://www.linkedin.com/in/kate-moore-803/">LinkedIn</a>
 
 
 <!-- HTML for the Connections widget lives in the _includes/connections.html file -->
