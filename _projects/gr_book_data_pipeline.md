@@ -4,7 +4,7 @@ title: GoodReads Book Data Pipeline
 description: A description goes here. 
 img: assets/img/goodreads-cover.png
 importance: 2
-category: projects
+category: 
 related_publications: false #removes references
 ---
 <!-- + View the Citywide Land Audit webpage on boston.gov: [https://www.boston.gov/departments/housing/citywide-land-audit](https://www.boston.gov/departments/housing/citywide-land-audit)

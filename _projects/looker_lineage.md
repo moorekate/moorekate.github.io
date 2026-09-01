@@ -4,7 +4,7 @@ title: Looker Lineage
 description: Winner of "Best Hack" at the 2024 Looker Hackathon
 img: assets/img/sankey-lineage.png
 importance: 1
-category: hackathons
+category: 
 related_publications: false # removes references
 redirect: https://github.com/moorekate/Looker_Hackathon_2024
 ---
