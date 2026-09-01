@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: I do data stuff.
+subtitle: I kept asking what was upstream, and look where it got me.
 
 profile:
   align: right
@@ -26,9 +26,17 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I believe in sustainable data practices that scale alongside new and emerging technologies, respectful but driven work environments, and above all else-- the sanctity of SQL.
+I've spent 5+ years working with data from nearly every direction: as an analyst, engineer, and, once upon a time, as a geospatial expert.
 
-Outside of work, I'm an active volleyball player, rock climber, and reader!
+Today I'm a Data Engineer. I write Python and SQL, build and orchestrate pipelines, work with APIs and cloud infrastructure, and spend a lot of time thinking about how data gets from where it starts to where it needs to be.
+
+But I also know what it's like to be the person waiting for that data. I've owned analytics, experimentation, metrics, models, and reporting. I've worked closely with the people making product decisions from it. And I've worked with data formats strange enough to require latitude and longitude.
+
+I like that I've seen so many sides of it. I don't want to do all of them at once, but I think I'm a much better engineer for knowing what exists beyond my part of the stack.
+
+There's always more to learn. That's probably my favorite part.
+
+Outside of work, I'm a (pretty decent) volleyball player, rock climber, and avid reader! 
 
 <!-- HTML for the Connections widget lives in the _includes/connections.html file -->
  {% include connections.html %}
