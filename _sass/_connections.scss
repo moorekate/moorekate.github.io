@@ -23,12 +23,12 @@
 .connections-grid {
   line-height: 1;
   align-self: flex-start;
+  margin-bottom: 1rem;
   // do not need to define a CSS grid because YAML formatting is text/strings
 }
 
 .connections-archive {
   font-size: 0.8rem;
-  margin-top: 2rem;
   text-align: right;
 }
 
