@@ -1,15 +1,15 @@
 ---
 layout: page
 title: Mayor Wu's Citywide Land Audit
-description: A description goes here. 
-img: assets/img/sankey-lineage.png
+# description: A description goes here. 
+img: assets/img/boston-seal-logo.png
 importance: 1
 category: projects
 related_publications: true
-redirect: https://github.com/moorekate/Looker_Hackathon_2024
+# redirect: none
 ---
 
-<!-- [View the project on GitHub](https://github.com/moorekate/Looker_Hackathon_2024)
+<!-- [View the project on GitHub](no link)
 
 To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 
