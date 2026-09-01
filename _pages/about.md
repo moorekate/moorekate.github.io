@@ -30,11 +30,11 @@ I've spent half a decade working with data from nearly every direction: as an an
 
 Today I'm a Data Engineer. I write Python and SQL, build and orchestrate pipelines, work with APIs and cloud infrastructure, and spend a lot of time thinking about how data gets from where it starts to where it needs to be.
 
-I also know what it's like to be the person waiting for that data. I've owned analytics, experimentation, metrics, and models. I've worked closely with the people making product decisions from it. And I've worked with data formats in bith two and three dimensions-- my favorite data representation is the space-time cube because it sounds like something from Star Trek. 
+I also know what it's like to be the person waiting for that data. I've owned analytics, experimentation, metrics, and models. I've worked closely with the people making product decisions from it. I've worked with a variety of data formats in both two and three dimensions-- my favorite data representation is the space-time cube, because it sounds like something from Star Trek. 
 
-I like that I've seen so many sides of how data is sourced, transformed, and then utilized to drive a bussiness forward. I think I'm a much better engineer for knowing what exists beyond my part of the stack. There's always more to learn. That's probably my favorite part.
+I like that I've seen so many sides of how data is sourced, transformed, and then consumed, and I think I'm a much better engineer for knowing what exists beyond my part of the stack. There's always more to learn. That's probably my favorite part.
 
-Outside of work, I'm a volleyball player, rock climber, and big-time reader!
+Outside of work, I'm a volleyball player, rock climber, and reader!
 
 <a href="mailto:youremail@example.com">email me</a>
 &nbsp;&nbsp;&nbsp;

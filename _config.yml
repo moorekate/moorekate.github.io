@@ -6,8 +6,7 @@ title: Kate Alice Moore # the website title (if blank, full name will be used in
 first_name: Kate
 middle_name: Alice
 last_name: Moore
-contact_note: >
-  The best way to reach me is by email.
+contact_note: 
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Beep boop.
 footer_text: >
