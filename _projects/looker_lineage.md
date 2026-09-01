@@ -6,9 +6,10 @@ img: assets/img/sankey-lineage.png
 importance: 1
 category: hackathons
 related_publications: true
+redirect: https://github.com/moorekate/Looker_Hackathon_2024
 ---
 
-[View the project on GitHub](https://github.com/moorekate/Looker_Hackathon_2024)
+<!-- [View the project on GitHub](https://github.com/moorekate/Looker_Hackathon_2024)
 
 To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 
@@ -76,4 +77,4 @@ Here's the code for the last row of images above:
 </div>
 ```
 
-{% endraw %}
+{% endraw %} -->
