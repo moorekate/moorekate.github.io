@@ -5,7 +5,7 @@ description: A description goes here.
 img: assets/img/boston-seal-logo.png
 importance: 2
 category: projects
-related_publications: true
+related_publications: false #removes references
 ---
 + View the Citywide Land Audit webpage on boston.gov: [https://www.boston.gov/departments/housing/citywide-land-audit](https://www.boston.gov/departments/housing/citywide-land-audit)
 

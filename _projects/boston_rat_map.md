@@ -5,6 +5,6 @@ description: This is a description.
 img: assets/img/rat-cover-photo.png
 importance: 3
 category: projects
-related_publications: true
+related_publications: false # removes references
 # redirect: none
 ---
