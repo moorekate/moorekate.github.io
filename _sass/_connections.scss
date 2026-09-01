@@ -28,8 +28,10 @@
 }
 
 .connections-archive {
-  font-size: 0.8rem;
-  text-align: right;
+  font-size: 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 2.5rem; // controls spacing b/t grid and archive link
+  text-align: left;
 }
 
 .connections-archive a:hover {
