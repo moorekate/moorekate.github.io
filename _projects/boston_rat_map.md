@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Looker Lineage
-description: Winner of "Best Hack" at the 2024 Looker Hackathon
-img: assets/img/sankey-lineage.png
+title: Rodent Tracker + Web App
+description: This is a description.
+img: assets/img/rat-cover-photo.png
 importance: 3
-category: hackathons
+category: projects
 related_publications: true
-redirect: https://github.com/moorekate/Looker_Hackathon_2024
+# redirect: https://github.com/moorekate/Looker_Hackathon_2024
 ---
 
 <!-- [View the project on GitHub](https://github.com/moorekate/Looker_Hackathon_2024)
