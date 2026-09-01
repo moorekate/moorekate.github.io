@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Mayor Wu's Citywide Land Audit
-# description: A description goes here. 
+description: A description goes here. 
 img: assets/img/boston-seal-logo.png
 importance: 2
 category: projects
