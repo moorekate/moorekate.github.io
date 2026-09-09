@@ -9,6 +9,7 @@ importance: 1
 # category: 
 related_publications: false # removes references
 redirect: https://github.com/moorekate/Looker_Hackathon_2024
+card_footer: View the repo!
 ---
 
 <!-- [View the project on GitHub](https://github.com/moorekate/Looker_Hackathon_2024)
