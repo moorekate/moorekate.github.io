@@ -26,9 +26,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I've spent half a decade working with data from nearly every direction: as an analyst, engineer, and, once upon a time, as a geospatial expert.
+I've spent half a decade working with data as both an analyst and engineer. 
 
-Today I'm a Data Engineer. I write Python and SQL, build and orchestrate pipelines, work with APIs and cloud infrastructure, and spend a lot of time thinking about how data gets from where it starts to where it needs to be.
+Today I write Python and SQL, build and orchestrate pipelines, work with APIs and cloud infrastructure, and spend a lot of time thinking about how data gets from where it starts to where it needs to be.
 
 I also know what it's like to be the person waiting for that data. I've owned analytics, experimentation, metrics, and models. I've worked closely with the people making product decisions from it. I've worked with a variety of data formats in both two and three dimensions-- my favorite data representation is the space-time cube, because it sounds like something from Star Trek. 
 
