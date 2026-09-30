@@ -30,7 +30,7 @@ I've spent half a decade working with data as both an analyst and engineer.
 
 Today I write Python and SQL, build and orchestrate pipelines, work with APIs and cloud infrastructure, and spend a lot of time thinking about how data gets from where it starts to where it needs to be.
 
-I also know what it's like to be the person waiting for that data. I've owned analytics, experimentation, metrics, and models. I've worked closely with the people making product decisions from it. I've worked with a variety of data formats in both two and three dimensions-- my favorite data representation is the space-time cube, because it sounds like something from Star Trek. 
+I also know what it's like to be the person waiting for that data. I've owned analytics, experimentation, metrics, and models. I've worked with a variety of data formats in both two and three dimensions-- my favorite data representation is the space-time cube, because it sounds like something from Star Trek. 
 
 I like that I've seen so many sides of how data is sourced, transformed, and then consumed, and I think I'm a much better engineer for knowing what exists beyond my part of the stack. There's always more to learn. That's probably my favorite part.
 
